@@ -1,0 +1,187 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 34944 bytes for Chunk::new
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:323), pid=9428, tid=6884
+#
+# JRE version: Java(TM) SE Runtime Environment (7.0_60-b19) (build 1.7.0_60-b19)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (24.60-b09 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000000000292d800):  JavaThread "main" [_thread_in_native, id=6884, stack(0x0000000002930000,0x0000000002a30000)]
+
+Stack: [0x0000000002930000,0x0000000002a30000]
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  java.lang.String.replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;+8
+j  com.android.dx.cf.direct.ClassPathOpener.compareClassNames(Ljava/lang/String;Ljava/lang/String;)I+23
+j  com.android.dx.cf.direct.ClassPathOpener.access$000(Ljava/lang/String;Ljava/lang/String;)I+2
+j  com.android.dx.cf.direct.ClassPathOpener$2.compare(Ljava/io/File;Ljava/io/File;)I+8
+j  com.android.dx.cf.direct.ClassPathOpener$2.compare(Ljava/lang/Object;Ljava/lang/Object;)I+9
+j  java.util.TimSort.countRunAndMakeAscending([Ljava/lang/Object;IILjava/util/Comparator;)I+43
+j  java.util.TimSort.sort([Ljava/lang/Object;IILjava/util/Comparator;)V+41
+j  java.util.TimSort.sort([Ljava/lang/Object;Ljava/util/Comparator;)V+5
+j  java.util.Arrays.sort([Ljava/lang/Object;Ljava/util/Comparator;)V+16
+j  com.android.dx.cf.direct.ClassPathOpener.processDirectory(Ljava/io/File;Z)Z+43
+j  com.android.dx.cf.direct.ClassPathOpener.processOne(Ljava/io/File;Z)Z+10
+j  com.android.dx.cf.direct.ClassPathOpener.processDirectory(Ljava/io/File;Z)Z+64
+j  com.android.dx.cf.direct.ClassPathOpener.processOne(Ljava/io/File;Z)Z+10
+j  com.android.dx.cf.direct.ClassPathOpener.process()Z+15
+j  com.android.dx.command.dexer.Main.processOne(Ljava/lang/String;Lcom/android/dx/cf/direct/ClassPathOpener$FileNameFilter;)V+20
+j  com.android.dx.command.dexer.Main.processAllFiles()Z+272
+j  com.android.dx.command.dexer.Main.runMultiDex()I+66
+j  com.android.dx.command.dexer.Main.run(Lcom/android/dx/command/dexer/Main$Arguments;)I+66
+j  com.android.dx.command.dexer.Main.main([Ljava/lang/String;)V+14
+j  com.android.dx.command.Main.main([Ljava/lang/String;)V+61
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x000000000892e800 JavaThread "Service Thread" daemon [_thread_blocked, id=6484, stack(0x000000000a080000,0x000000000a180000)]
+  0x000000000891f800 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=2112, stack(0x0000000009f80000,0x000000000a080000)]
+  0x000000000891e000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=6964, stack(0x0000000009e80000,0x0000000009f80000)]
+  0x000000000891d000 JavaThread "Attach Listener" daemon [_thread_blocked, id=5004, stack(0x0000000009d80000,0x0000000009e80000)]
+  0x000000000891a000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=6624, stack(0x0000000009c80000,0x0000000009d80000)]
+  0x00000000088c9000 JavaThread "Finalizer" daemon [_thread_blocked, id=1592, stack(0x0000000009b80000,0x0000000009c80000)]
+  0x00000000088c5800 JavaThread "Reference Handler" daemon [_thread_blocked, id=2052, stack(0x0000000009a80000,0x0000000009b80000)]
+=>0x000000000292d800 JavaThread "main" [_thread_in_native, id=6884, stack(0x0000000002930000,0x0000000002a30000)]
+
+Other Threads:
+  0x00000000088c0800 VMThread [stack: 0x0000000009980000,0x0000000009a80000] [id=6036]
+  0x0000000008939800 WatcherThread [stack: 0x000000000a180000,0x000000000a280000] [id=8336]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ PSYoungGen      total 38912K, used 2027K [0x00000000eaa80000, 0x00000000ed580000, 0x0000000100000000)
+  eden space 33792K, 6% used [0x00000000eaa80000,0x00000000eac7af58,0x00000000ecb80000)
+  from space 5120K, 0% used [0x00000000ed080000,0x00000000ed080000,0x00000000ed580000)
+  to   space 5120K, 0% used [0x00000000ecb80000,0x00000000ecb80000,0x00000000ed080000)
+ ParOldGen       total 87040K, used 0K [0x00000000c0000000, 0x00000000c5500000, 0x00000000eaa80000)
+  object space 87040K, 0% used [0x00000000c0000000,0x00000000c0000000,0x00000000c5500000)
+ PSPermGen       total 21504K, used 3203K [0x00000000bae00000, 0x00000000bc300000, 0x00000000c0000000)
+  object space 21504K, 14% used [0x00000000bae00000,0x00000000bb120c28,0x00000000bc300000)
+
+Card table byte_map: [0x0000000005b30000,0x0000000005d60000] byte_map_base: 0x0000000005559000
+
+Polling page: 0x0000000000a00000
+
+Code Cache  [0x0000000002b30000, 0x0000000002da0000, 0x0000000005b30000)
+ total_blobs=198 nmethods=5 adapters=146 free_code_cache=48758Kb largest_free_block=49916800
+
+Compilation events (10 events):
+Event: 0.786 Thread 0x000000000891e000    1             java.lang.String::charAt (29 bytes)
+Event: 0.793 Thread 0x000000000891e000 nmethod 1 0x0000000002b933d0 code [0x0000000002b93500, 0x0000000002b93598]
+Event: 0.799 Thread 0x000000000891f800    2             sun.misc.ASCIICaseInsensitiveComparator::compare (126 bytes)
+Event: 0.807 Thread 0x000000000891f800 nmethod 2 0x0000000002b90f10 code [0x0000000002b91060, 0x0000000002b913d8]
+Event: 0.873 Thread 0x000000000891e000    3             java.lang.String::indexOf (70 bytes)
+Event: 0.876 Thread 0x000000000891e000 nmethod 3 0x0000000002b90310 code [0x0000000002b90460, 0x0000000002b905e8]
+Event: 0.886 Thread 0x000000000891f800    4             java.lang.String::hashCode (55 bytes)
+Event: 0.889 Thread 0x000000000891f800 nmethod 4 0x0000000002b8ffd0 code [0x0000000002b90100, 0x0000000002b90258]
+Event: 0.897 Thread 0x000000000891e000    5             java.lang.String::lastIndexOf (52 bytes)
+Event: 0.899 Thread 0x000000000891e000 nmethod 5 0x0000000002b950d0 code [0x0000000002b95220, 0x0000000002b95388]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 0.892 Thread 0x000000000292d800 Threw 0x00000000eabd1c70 at C:\re\jdk7u60\1081\hotspot\src\share\vm\prims\jvm.cpp:1244
+Event: 0.893 Thread 0x000000000292d800 Threw 0x00000000eabd3c18 at C:\re\jdk7u60\1081\hotspot\src\share\vm\prims\jvm.cpp:1244
+Event: 0.894 Thread 0x000000000292d800 Threw 0x00000000eabd8468 at C:\re\jdk7u60\1081\hotspot\src\share\vm\prims\jvm.cpp:1244
+Event: 0.895 Thread 0x000000000292d800 Threw 0x00000000eabdc690 at C:\re\jdk7u60\1081\hotspot\src\share\vm\prims\jvm.cpp:1244
+Event: 0.896 Thread 0x000000000292d800 Threw 0x00000000eabe1020 at C:\re\jdk7u60\1081\hotspot\src\share\vm\prims\jvm.cpp:1244
+Event: 0.897 Thread 0x000000000292d800 Threw 0x00000000eabe53c8 at C:\re\jdk7u60\1081\hotspot\src\share\vm\prims\jvm.cpp:1244
+Event: 0.900 Thread 0x000000000292d800 Threw 0x00000000eabebc80 at C:\re\jdk7u60\1081\hotspot\src\share\vm\prims\jvm.cpp:1244
+Event: 0.901 Thread 0x000000000292d800 Threw 0x00000000eabf1230 at C:\re\jdk7u60\1081\hotspot\src\share\vm\prims\jvm.cpp:1244
+Event: 0.902 Thread 0x000000000292d800 Threw 0x00000000eabf3180 at C:\re\jdk7u60\1081\hotspot\src\share\vm\prims\jvm.cpp:1244
+Event: 0.903 Thread 0x000000000292d800 Threw 0x00000000eabf6910 at C:\re\jdk7u60\1081\hotspot\src\share\vm\prims\jvm.cpp:1244
+
+Events (10 events):
+Event: 0.900 loading class 0x000000000a2f90f0 done
+Event: 0.901 loading class 0x000000000a35cc70
+Event: 0.901 loading class 0x000000000a35cc70 done
+Event: 0.902 loading class 0x000000000a3584c0
+Event: 0.902 loading class 0x000000000a3584c0 done
+Event: 0.903 loading class 0x000000000a35caf0
+Event: 0.903 loading class 0x000000000a35caf0 done
+Event: 0.904 loading class 0x0000000002aaaf30
+Event: 0.904 loading class 0x0000000002aaaf30 done
+Event: 0.904 loading class 0x0000000002a7cad0
+
+
+Dynamic libraries:
+0x00007ff61a050000 - 0x00007ff61a083000 	C:\Program Files\Java\jdk1.7.0_60\bin\java.exe
+0x00007ffbf34a0000 - 0x00007ffbf3661000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffbf0b50000 - 0x00007ffbf0bfd000 	C:\Windows\system32\KERNEL32.DLL
+0x00007ffbef990000 - 0x00007ffbefb78000 	C:\Windows\system32\KERNELBASE.dll
+0x00007ffbf2c00000 - 0x00007ffbf2ca7000 	C:\Windows\system32\ADVAPI32.dll
+0x00007ffbf2f80000 - 0x00007ffbf301d000 	C:\Windows\system32\msvcrt.dll
+0x00007ffbf2f10000 - 0x00007ffbf2f6b000 	C:\Windows\system32\sechost.dll
+0x00007ffbf3030000 - 0x00007ffbf314c000 	C:\Windows\system32\RPCRT4.dll
+0x00007ffbf3150000 - 0x00007ffbf32a6000 	C:\Windows\system32\USER32.dll
+0x00007ffbf3310000 - 0x00007ffbf3496000 	C:\Windows\system32\GDI32.dll
+0x00007ffbebe20000 - 0x00007ffbec094000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.10586.494_none_a2d8b04ea53e3145\COMCTL32.dll
+0x00007ffbf24e0000 - 0x00007ffbf275d000 	C:\Windows\system32\combase.dll
+0x00007ffbf0670000 - 0x00007ffbf06da000 	C:\Windows\system32\bcryptPrimitives.dll
+0x00007ffbf23d0000 - 0x00007ffbf240b000 	C:\Windows\system32\IMM32.DLL
+0x0000000074ec0000 - 0x0000000074f92000 	C:\Program Files\Java\jdk1.7.0_60\jre\bin\msvcr100.dll
+0x0000000073cb0000 - 0x0000000074482000 	C:\Program Files\Java\jdk1.7.0_60\jre\bin\server\jvm.dll
+0x00007ffbf0640000 - 0x00007ffbf0663000 	C:\Windows\system32\WINMM.dll
+0x00007ffbef8b0000 - 0x00007ffbef8dc000 	C:\Windows\system32\WINMMBASE.dll
+0x00007ffbefcc0000 - 0x00007ffbefd03000 	C:\Windows\system32\cfgmgr32.dll
+0x00007ffbf3020000 - 0x00007ffbf3028000 	C:\Windows\system32\PSAPI.DLL
+0x00007ffbea810000 - 0x00007ffbea819000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ffbf2b90000 - 0x00007ffbf2bfb000 	C:\Windows\system32\WS2_32.dll
+0x0000000074940000 - 0x000000007494f000 	C:\Program Files\Java\jdk1.7.0_60\jre\bin\verify.dll
+0x0000000074910000 - 0x0000000074938000 	C:\Program Files\Java\jdk1.7.0_60\jre\bin\java.dll
+0x00000000748f0000 - 0x0000000074905000 	C:\Program Files\Java\jdk1.7.0_60\jre\bin\zip.dll
+
+VM Arguments:
+jvm_args: -Djava.awt.headless=true -Xmx1024M -Dfile.encoding=GBK -Duser.country=CN -Duser.language=zh -Duser.variant 
+java_command: com.android.dx.command.Main --dex --force-jumbo --num-threads=4 --multi-dex --output E:\workspace\PhotosWall\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_0 E:\workspace\PhotosWall\app\build\intermediates\transforms\instantRunSlicer\debug\folders\1\5\slice_0
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.7.0_60
+CLASSPATH=C:\Program Files\Java\jdk1.7.0_60\lib\dt.jar;C:\Program Files\Java\jdk1.7.0_60\lib\tools.jar
+PATH=C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;JAVA_HOME\bin;JAVA_HOME\jre\bin;D:\ADT-Bundle\sdk\platform-tools;C:\Program Files (x86)\decomp;4.94066E-324RADLE_HOME\bin;C:\Program Files\Git\bin
+USERNAME=AllenIverson
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 42 Stepping 7, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 8.1 , 64 bit Build 9600 
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 42 stepping 7, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, aes, ht, tsc, tscinvbit
+
+Memory: 4k page, physical 8364836k(1389512k free), swap 8364836k(461224k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (24.60-b09) for windows-amd64 JRE (1.7.0_60-b19), built on May  7 2014 12:55:18 by "java_re" with unknown MS VC++:1600
+
+time: Sat Aug 06 17:13:08 2016
+elapsed time: 1 seconds
+
